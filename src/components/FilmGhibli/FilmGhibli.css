@@ -1,0 +1,49 @@
+.film-ghibli {
+    display: flex;
+    flex-direction: column;
+
+    div + div {
+        margin-top: var(--space-small);
+    }
+
+    @media only screen and (min-width: 500px) {
+        flex-direction: row;
+        justify-content: space-between;
+
+        div + div {
+            margin-top: 0;
+        }
+
+        div:first-of-type {
+            width: 45%;
+        }
+    
+        div:nth-child(2) {
+            width: 50%;
+        }
+    }
+
+    @media only screen and (min-width: 900px) {
+        div:first-of-type {
+            width: 35%;
+        }
+    
+        div:nth-child(2) {
+            width: 60%;
+        }
+    }
+
+    h2 {
+        font-size: max(35px, 4vw);
+        font-weight: 700;
+    }
+
+    h2 + h3,
+    h3 + p {
+        margin-top: var(--space-xsmall);
+    }
+
+    p + p {
+        margin-top: var(--space-small);
+    }
+}

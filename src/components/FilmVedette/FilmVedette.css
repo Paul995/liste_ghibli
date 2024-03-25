@@ -1,0 +1,139 @@
+.film-vedette {
+
+    a {
+        border-radius: 12px;
+        color: var(--color-white);
+        display: flex;
+        overflow: hidden;
+        position: relative;
+        transition: box-shadow .3s ease,
+                    transform .3s ease;
+
+        img {
+            display: flex;
+            transform: scale(1.05);
+            transition: transform .3s ease;
+        }
+
+        div {
+            bottom: 0;
+            left: 0;
+            opacity: 0;
+            padding: 40px 20px;
+            pointer-events: none;
+            position: absolute;
+            transform: translateY(10px);
+            transition: opacity .3s ease,
+                        transform .3s ease;
+            width: 100%;
+            z-index: 5;
+        }
+
+        h2,
+        p {
+            color: var(--color-white);
+            opacity: 0;
+            transform: translateY(10px);
+            transition: opacity .3s ease,
+                        transform .3s ease;
+        }
+
+        h2 {
+            font-weight: 400;
+            transition-delay: .2s;
+        }
+
+        p {
+            font-size: max(18px, 2vw);
+            font-weight: 100;
+            transition-delay: .3s;
+        }
+
+        h2 + p {
+            margin-top: var(--space-xsmall);
+        }
+
+        &:after {
+            content: "";
+            background: linear-gradient(to bottom, transparent, transparent 40%, rgba(0, 0, 0, 0) 10%, rgba(0, 0, 0, .5));
+            height: 100%;
+            opacity: 0;
+            pointer-events: none;
+            position: absolute;
+            transform: translateY(10px);
+            transition: opacity .3s ease,
+                        transform .3s ease;
+            width: 100%;
+        }
+
+        &:hover {
+            /* ref : https://getcssscan.com/css-box-shadow-examples */
+            box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
+            transform:  scale(1.05)
+                        translateY(-10px);
+
+            img {
+                display: flex;
+                transform: scale(1);
+                
+            }
+
+            div {
+                opacity: 1;
+                transform: translateY(0);
+            }
+
+
+            h2,
+            p {
+                opacity: 1;
+                transform: translateY(0);
+            }
+
+            &:after {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    }
+
+    a + div {
+        align-items: center;
+        display: flex;
+        justify-content: space-between;
+        margin-top: var(--space-small);
+    }
+
+    button {
+        background-color: transparent;
+        border: none;
+        border-radius: 50%;
+        color: var(--color-primary);
+        cursor: pointer;
+        height: max(40px, 4vw);
+        margin: 0;
+        padding: 0;
+        position: relative;
+        transition: background-color .3s ease,
+                    color .3s ease;
+        width: max(40px, 4vw);
+    }
+
+    button::after {
+        content: "\27F2";
+        font-size: max(35px, 3.5vw);
+        left: 50%;
+        position: absolute;
+        transform: translate(-56%, -54%);
+        top: 50%;
+    }
+
+    button:hover {
+        background-color: var(--color-primary);
+        color: var(--color-white);
+    }
+
+    button:active {
+        transform: scale(1.08);
+    }
+}

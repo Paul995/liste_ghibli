@@ -1,0 +1,44 @@
+.accueil {
+    
+    display: flex;
+    justify-content: space-between;
+
+    section:first-of-type {
+        width: 35%;
+    }
+
+    section:nth-child(2) {
+        width: 50%;
+
+        h2 + ul {
+            margin-top: var(--space-small);
+        }
+
+        li {
+            position: relative;
+        }
+    
+        li a {
+            display: inline-block;
+            padding: 4px 0;
+        }
+    
+        li + li {
+            margin-top: var(--space-base);
+        }
+    
+        li img {
+            bottom: -10px;
+            display: none;
+            left: 25%;
+            pointer-events: none;
+            position: absolute;
+            width: 75%;
+            z-index: 0;
+        }
+    
+        li:hover img {
+            display: block;
+        }
+    }
+}
